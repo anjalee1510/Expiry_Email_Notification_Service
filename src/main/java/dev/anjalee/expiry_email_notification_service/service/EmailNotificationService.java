@@ -1,6 +1,6 @@
-package dev.anjalee.expiry_email_notofication_service.service;
+package dev.anjalee.expiry_email_notification_service.service;
 
-import dev.anjalee.expiry_email_notofication_service.dtos.EmailEventDTO;
+import dev.anjalee.expiry_email_notification_service.dtos.EmailEventDTO;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;

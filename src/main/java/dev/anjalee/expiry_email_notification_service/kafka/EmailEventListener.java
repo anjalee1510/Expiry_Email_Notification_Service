@@ -1,10 +1,11 @@
-package dev.anjalee.expiry_email_notofication_service.kafka;
+package dev.anjalee.expiry_email_notification_service.kafka;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dev.anjalee.expiry_email_notofication_service.dtos.EmailEventDTO;
-import dev.anjalee.expiry_email_notofication_service.service.EmailNotificationService;
+import dev.anjalee.expiry_email_notification_service.dtos.EmailEventDTO;
+import dev.anjalee.expiry_email_notification_service.service.EmailNotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,7 +16,7 @@ public class EmailEventListener {
 
     @Autowired
     private EmailNotificationService emailNotificationService;
-
+    @KafkaListener(topics = "membership-expiry-email-topic", groupId = "expiry-email-notification-service-group")
     public void listen(String message) {
 
         System.out.println("Received message: " + message);

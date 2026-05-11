@@ -1,4 +1,4 @@
-package dev.anjalee.expiry_email_notofication_service.dtos;
+package dev.anjalee.expiry_email_notification_service.dtos;
 
 public class EmailEventDTO {
 
